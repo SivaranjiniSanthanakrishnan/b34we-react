@@ -1,0 +1,65 @@
+# GET VERSION
+npm -v (or --version)
+
+# CREATE PACKAGE.JSON
+npm init
+npm init -y (or --yes)
+
+# INSTALLING LOCAL PACKAGES
+npm install lodash 
+npm install gulp gulp-sass
+
+# MOVE TO ANOTHER FOLDER
+npm install #Install all the missed packages listed in package.json 
+npm install --production
+
+# REMOVING MODULES
+npm uninstall gulp-sass 
+npm remove gulp 
+
+#INSTALL CERTAIN VERSIONS
+npm install lodash@4.17.3 --save
+
+# UPDATE
+npm update lodash --save
+
+# INSTALL GLOBAL MODULE
+npm install <package_name> -g
+
+# FIND ROOT FOLDER
+npm root -g
+
+# REMOVE GLOBAL PACKAGES
+npm remove <package_name>  -g
+
+# LISTING PACKAGES
+npm list
+npm list --depth 0
+npm list --depth 1
+
+# INSTALL LIVE-SERVER LOCALLY
+npm install live-server --save-dev
+
+# NPM SCRIPT
+"scripts": {
+    "start": "node index.js",
+    "dev": "live-server"
+  },
+
+
+#CREATE REACT APP
+npm install create-react-app -g
+npx create-react-app app-name 
+npx create-react-app app-name --use-npm  #If running app through npm then create-react-app using npm
+
+#INSTALL YARN
+npm install -g yarn 
+
+#INSTALL PACKAGE USING YARN
+yarn add package-name 
+
+#INSTALL PACKAGE USING YARN IN DEV DEPENDENCY
+yarn add package-name --dev
+
+#REMOVE PACKAGE USING YARN
+yarn remove package-name

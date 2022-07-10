@@ -21,9 +21,13 @@ function App (props) {
   const handleDecrement = () => {
     setInitialVal(initialVal -1)
   }
+
+  const toggleComponent = (childRender) => {
+    setCounter(childRender);
+  }
   
   return (
-    <div>
+    <div className={{padding: '40px'}}>
       <h3> This is {props.componentName} </h3>
       Initial Value : {initialVal} <br/> <br/>
 
@@ -33,12 +37,13 @@ function App (props) {
 
       <button onClick={() => setInitialVal(5)}> Reset </button> &nbsp; &nbsp; <br/> <br/>
 
-      <button onClick={() => setCounter(!counter)}>Mount / Unmount Component</button> <br/> <br/>
+      {/* <button onClick={() => setCounter(!counter)}>Mount / Unmount Component</button> <br/> <br/> */}
       
       <BasicCard subheading="Counter Application" heading="Functional Component" 
       description="This componnent is having Ccounter Application as well as Button to toggle class component" 
       functionalities="Increment | Decrement | Reset | Mount/Unmount Component" 
-      buttonName="Toggle" textColour="green"/> 
+      buttonName="Toggle" textColour="green" 
+      toggleComponentFromParent = {(childRenders) => toggleComponent(childRenders)}/> 
 
       {/* Conditional Rendering */}
       {counter ? <Counter componentName="Class Component" /> : <></>}

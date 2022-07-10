@@ -3,7 +3,7 @@ import BasicCard from './Cards';
 
 class Counter extends Component {
     constructor(props){
-        console.log('constructor');
+        // console.log('constructor');
         super();
         this.state = {
             initialValue : 5
@@ -15,10 +15,10 @@ class Counter extends Component {
         // data
         // store in state variable
         // populate in HTML 
-        console.log("Mounting Phase of Counter Component");
+        // console.log("Mounting Phase of Counter Component");
     }
     componentDidUpdate(){
-        console.log("Updating Phase of Counter Component");
+        // console.log("Updating Phase of Counter Component");
     }
     componentWillUnmount(){
         console.log('Unmounting phase of Countrt Component')
@@ -32,7 +32,7 @@ class Counter extends Component {
         this.setState({initialValue : resetValue})
     }
     render(){
-        console.log('render');
+        // console.log('render');
         const handleIncrement = () => {
             // console.log('In increment Function')
             this.setState({initialValue : ++this.state.initialValue})

@@ -8,6 +8,21 @@ import Typography from '@mui/material/Typography';
 
 
 function BasicCard(props) {
+  const [childRender, setChildRender] = React.useState(true);
+
+  React.useEffect(() => {
+    return () => {
+      console.log("Unmounting phase of Cards Component")
+    }
+  }, []);
+  
+  const handleToggle = () => {
+    if(props.toggleComponentFromParent) {
+      props.toggleComponentFromParent(!childRender);
+      setChildRender(!childRender);
+    }
+  }
+
   return (
     <Card sx={{ width: 260 }}>
       <CardContent>
@@ -25,7 +40,7 @@ function BasicCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">{props.buttonName}</Button>
+        <Button size="small" onClick={handleToggle}>{props.buttonName}</Button>
       </CardActions>
     </Card>
   );
